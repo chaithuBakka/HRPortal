@@ -13,7 +13,7 @@ public class PropMgr {
         Configurations configs = new Configurations();
         try
         {
-            config = configs.properties(new File("/Users/ravi/dev/selenium/resappsgmail/src/test/resources/config/resappsgmail.properties"));
+            config = configs.properties(new File("/Users/ravi/gitProject/HRPortal/src/test/java/resources/config/hrportal.properties"));
         }
         catch(ConfigurationException cex)
         {
@@ -21,8 +21,8 @@ public class PropMgr {
         }
     }
 
-    public String getUrl() {
-        return config.getString("url");
+    public String getUrl(String url) {
+        return config.getString(url);
     }
 
     public String getDriverPath() {
