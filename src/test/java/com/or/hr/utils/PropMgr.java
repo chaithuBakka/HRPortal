@@ -1,0 +1,31 @@
+package com.or.hr.utils;
+
+import org.apache.commons.configuration2.Configuration;
+import org.apache.commons.configuration2.builder.fluent.Configurations;
+import org.apache.commons.configuration2.ex.ConfigurationException;
+
+import java.io.File;
+
+public class PropMgr {
+    private Configuration config;
+
+    public PropMgr() {
+        Configurations configs = new Configurations();
+        try
+        {
+            config = configs.properties(new File("/Users/ravi/dev/selenium/resappsgmail/src/test/resources/config/resappsgmail.properties"));
+        }
+        catch(ConfigurationException cex)
+        {
+            System.out.println("Failed to load config file" + cex.getMessage());
+        }
+    }
+
+    public String getUrl() {
+        return config.getString("url");
+    }
+
+    public String getDriverPath() {
+        return config.getString("driverPath");
+    }
+}
