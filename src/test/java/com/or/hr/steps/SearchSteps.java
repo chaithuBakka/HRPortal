@@ -24,6 +24,7 @@ public class SearchSteps extends BaseSteps {
     @And("Click on search btn")
     public void click_on_search_btn(){
         searchPage.clickSearchBtn();
+        Assert.assertEquals("HR Portal - Employees", driver.getTitle());
     }
 
 }

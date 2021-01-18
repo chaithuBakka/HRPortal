@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import java.io.Console;
+import java.util.List;
 
 public class SearchPage extends BasePage {
 
@@ -46,6 +47,10 @@ public class SearchPage extends BasePage {
         employerName.sendKeys(empName);
     }
 
+    public int getDepartmentsSize(){
+        Select dropdown = new Select(department);
+        return dropdown.getOptions().size();
+    }
 
     public void setDepartment(String departmentId) {
         WebElement depDropDown = driver.findElement(By.id("departments-select"));
