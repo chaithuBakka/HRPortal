@@ -1,11 +1,10 @@
-package com.or.hr.steps;
+package com.or.hr.stepDefinitions;
 
 import com.or.hr.pages.LoginPage;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import java.util.List;
 
 public class LoginSteps extends BaseSteps {
     LoginPage loginPage;
@@ -19,6 +18,7 @@ public class LoginSteps extends BaseSteps {
     public void user_opens_hr_portal_in_the_browser(String url) {
         String site = propMgr.getUrl(url);
         driver.get(site);
+        System.out.println("Current Url is:"+ driver.getCurrentUrl());
         Assert.assertEquals("HR Portal - Login page", driver.getTitle());
     }
 
@@ -39,10 +39,18 @@ public class LoginSteps extends BaseSteps {
         loginPage.clickLoginBtn();
     }
 
+    //wait condition and also get title
     @Then("Login should succeed")
     public void login_should_succeed() {
-        Assert.assertEquals("HR Portal - Search", driver.getTitle() );
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.titleContains("HR Portal - Search"));
+        String searchPageTitle = driver.getTitle();
+        Assert.assertEquals("HR Portal - Search", searchPageTitle );
     }
 
+    @When("User should be displayed with error message")
+    public void user_should_be_displayed_with_error_message() {
+        System.out.println("Invalid password");
+    }
 
 }

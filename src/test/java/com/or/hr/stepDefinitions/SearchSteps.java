@@ -1,8 +1,9 @@
-package com.or.hr.steps;
+package com.or.hr.stepDefinitions;
 
 import com.or.hr.pages.SearchPage;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class SearchSteps extends BaseSteps {
@@ -24,6 +25,9 @@ public class SearchSteps extends BaseSteps {
     @And("Click on search btn")
     public void click_on_search_btn(){
         searchPage.clickSearchBtn();
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.titleContains("HR Portal - Employees"));
+        String empTitle = driver.getTitle();
         Assert.assertEquals("HR Portal - Employees", driver.getTitle());
     }
 

@@ -13,7 +13,7 @@ public class PropMgr {
         Configurations configs = new Configurations();
         try
         {
-            config = configs.properties(new File("/Users/ravi/gitProject/HRPortal/src/test/java/resources/config/hrportal.properties"));
+            config = configs.properties(new File("/Users/ravi/gitProject/HRPortal/src/test/resources/config/hrportal.properties"));
         }
         catch(ConfigurationException cex)
         {

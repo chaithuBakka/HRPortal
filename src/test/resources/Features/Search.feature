@@ -1,6 +1,6 @@
-
+@smoketest
 Feature: Validate the search page feature
-  Scenario Outline:
+  Scenario Outline: Validate the search page
     Given User Opens HRPortal in the browser "url"
     When User enters username as "username" and password as "password"
     Then User clicks Login button
@@ -13,4 +13,3 @@ Feature: Validate the search page feature
     | test1   | Human Resources|
     | test3   | Marketing      |
     | test4   | Sales          |
-

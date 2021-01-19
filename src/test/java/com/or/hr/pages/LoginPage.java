@@ -1,5 +1,7 @@
 package com.or.hr.pages;
 
+import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,8 +24,6 @@ public class LoginPage extends BasePage {
     WebElement loginBtn;
 
 
-
-
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -39,6 +39,7 @@ public class LoginPage extends BasePage {
     public void enterUserName(String name){
         userName.clear();
         userName.sendKeys(name);
+        userName.sendKeys(Keys.TAB);
     }
 
     public String getUserName(){
@@ -55,6 +56,8 @@ public class LoginPage extends BasePage {
         loginBtn.isEnabled();
         loginBtn.click();
     }
+
+
 
 
 

@@ -1,4 +1,4 @@
-package com.or.hr.steps;
+package com.or.hr.stepDefinitions;
 
 import com.or.hr.pages.EmployeePage;
 import io.cucumber.java.en.*;
@@ -42,9 +42,10 @@ public class EmployeeSteps extends BaseSteps {
         employeePage.selectEmployee(empIndex);
     }
 
+    //using getPageSource for assertion
     @Then("Click employee details")
     public void click_employee_details() {
         employeePage.clickEmployeeDetails();
-        Assert.assertEquals("HR Portal - Employee", driver.getTitle());
+        Assert.assertTrue(driver.getPageSource().contains("HR Portal - Employee"));
     }
 }

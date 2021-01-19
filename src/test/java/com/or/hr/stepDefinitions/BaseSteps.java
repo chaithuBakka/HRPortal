@@ -1,4 +1,4 @@
-package com.or.hr.steps;
+package com.or.hr.stepDefinitions;
 
 import com.or.hr.utils.PropMgr;
 import org.openqa.selenium.WebDriver;
@@ -13,4 +13,5 @@ public class BaseSteps {
         System.setProperty("webdriver.chrome.driver",propMgr.getDriverPath());
         driver = new ChromeDriver();
     }
+
 }
