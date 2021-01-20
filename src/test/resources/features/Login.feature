@@ -1,6 +1,4 @@
-
 Feature: HR Portal Login
-
   @Regression
   Scenario: Validate the login page with valid credentials
     Given User Opens HRPortal in the browser "url"
