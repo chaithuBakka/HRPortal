@@ -10,7 +10,6 @@ Feature: Validate the employee page feature
     Then employee names should match search value "maria"
     Then Select the radio button of the given employee "Francisco Maria"
     Then Click employee details
-    And Close Browser
 
     Examples:
       | empName | DepartmentId   |

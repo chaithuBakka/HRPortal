@@ -1,9 +1,14 @@
 package com.or.hr.stepDefinitions;
-import io.cucumber.java.en.Then;
+import io.cucumber.java.After;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CommonSteps extends BaseSteps {
 
-    @Then("Close Browser")
+    static {
+        driver = new ChromeDriver();
+    }
+
+    @After
     public void close_browser() {
        //driver.close();
        //driver.quit();

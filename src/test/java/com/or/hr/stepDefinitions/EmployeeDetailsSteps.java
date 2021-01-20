@@ -25,7 +25,7 @@ public class EmployeeDetailsSteps extends BaseSteps {
     public void update_the_salary_of_the_employee(String updateSalary) {
         employeeDetailsPage.setNewSalary(updateSalary);
         String actualSalary = employeeDetailsPage.getCurrentSalary();
-        Assert.assertEquals(actualSalary,updateSalary,"New updated salary is not updated in field");
+        Assert.assertEquals(actualSalary, updateSalary, "New updated salary is not updated in field");
     }
 
     @Then("Update the department name of employee to {string} and {string}")

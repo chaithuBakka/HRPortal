@@ -14,8 +14,6 @@ Feature: Validate employee details page test
     Then Update the Salary of the employee "<updateSalary>"
     Then Update the department name of employee to "<department>" and "<description>"
     And Click updateEmployee
-    And Close Browser
-
     Examples:
       | empName        | DepartmentId   | empTitle         |  updateSalary | department  | description |
       | Maria Anders   | IT             | Sales Associate  |  120000       | Marketing   | test        |

@@ -7,11 +7,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class EmployeeDetailsPage extends BasePage {
-
-
 
     public EmployeeDetailsPage(WebDriver driver) {
         super(driver);

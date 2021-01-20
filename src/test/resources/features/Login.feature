@@ -1,4 +1,4 @@
-@Regression
+
 Feature: HR Portal Login
 
   @Regression
@@ -7,7 +7,6 @@ Feature: HR Portal Login
     When User enters username as "username" and password as "password"
     And User clicks Login button
     Then Login should succeed
-    And Close Browser
 
   @ignore
   Scenario: Validate the login page with invalid credentials

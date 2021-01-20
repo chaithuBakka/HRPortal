@@ -1,16 +1,11 @@
 package com.or.hr.pages;
 
-import io.cucumber.java.en.Then;
-import javafx.concurrent.Task;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
-import java.io.Console;
-import java.util.List;
 
 public class SearchPage extends BasePage {
 
@@ -63,6 +58,4 @@ public class SearchPage extends BasePage {
     public void clickSearchBtn(){
         searchBtn.click();
     }
-
-
 }
